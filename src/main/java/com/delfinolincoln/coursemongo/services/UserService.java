@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.delfinolincoln.coursemongo.entities.User;
 import com.delfinolincoln.coursemongo.repositories.UserRepository;
+import com.delfinolincoln.coursemongo.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class UserService {

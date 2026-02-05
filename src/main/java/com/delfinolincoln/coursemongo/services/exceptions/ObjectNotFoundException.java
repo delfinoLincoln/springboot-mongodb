@@ -1,4 +1,4 @@
-package com.delfinolincoln.coursemongo.services;
+package com.delfinolincoln.coursemongo.services.exceptions;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
