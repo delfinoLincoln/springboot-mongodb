@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.delfinolincoln.coursemongo.entities.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, String> {
     
 }
