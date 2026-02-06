@@ -1,5 +1,6 @@
 package com.delfinolincoln.coursemongo.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,5 +28,12 @@ public class PostService {
 
     public List<Post> findByTitle(String title) {
         return postRepository.findByTitleIgnoreCase(title);
+    }
+
+    public List<Post> fullSearch(String text, Date minDate, Date maxDate) {
+        if (maxDate != null) {
+            maxDate = new Date(maxDate.getTime() + 24 * 60 * 60  * 1000);
+        }
+        return postRepository.fullSearch(text, minDate, maxDate);
     }
 }
