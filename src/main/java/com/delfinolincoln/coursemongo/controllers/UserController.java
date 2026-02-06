@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.delfinolincoln.coursemongo.dto.UserDto;
+import com.delfinolincoln.coursemongo.entities.Post;
 import com.delfinolincoln.coursemongo.entities.User;
 import com.delfinolincoln.coursemongo.services.UserService;
 
@@ -61,4 +62,10 @@ public class UserController {
         user = userService.updateUser(user);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+		User obj = userService.findById(id);
+		return ResponseEntity.ok().body(obj.getPosts());
+	}
 }

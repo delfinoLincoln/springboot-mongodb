@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "user")
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -53,7 +53,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public List<Post> getPost() {
+    public List<Post> getPosts() {
         return posts;
     }
 
